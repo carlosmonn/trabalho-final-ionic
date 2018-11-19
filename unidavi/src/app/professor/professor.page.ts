@@ -31,10 +31,6 @@ export class ProfessorPage implements OnInit {
     private router: Router) { }
 
   ngOnInit() {
-    this.presentLoading()
-      .then(() => {
-        this.getAllProfessores();
-      });
   }
 
   async presentLoading() {
@@ -46,10 +42,13 @@ export class ProfessorPage implements OnInit {
   }
 
   ionViewDidEnter() {
-    this.pagina = 0;
-    this.professores = [];
-    this.habilitaInfiniteScroll();
-    this.getAllProfessores();
+    this.presentLoading()
+      .then(() => {
+        this.pagina = 0;
+        this.professores = [];
+        this.habilitaInfiniteScroll();
+        this.getAllProfessores();
+      });
   }
 
   getAllProfessores() {
