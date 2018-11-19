@@ -1,0 +1,38 @@
+<ion-header>
+    <ion-toolbar text-center>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-title>Editando Professor</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <ion-item>
+      <ion-img src="https://png.icons8.com/color/96/000000/user-male-circle.png"></ion-img>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Nome</ion-label>
+      <ion-input type="text" name="nome" [(ngModel)]="professor.nome"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Data de Nascimento</ion-label>
+      <ion-datetime display-format="DD/MM/YYYY" name="datanascimento" [(ngModel)]="professor.datanascimento" cancel-text="Cancelar" done-text="Confirmar"></ion-datetime>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Ativo</ion-label>
+      <ion-toggle name="status" [(ngModel)]="professor.status"></ion-toggle>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Currículo</ion-label>
+      <ion-textarea name="curriculo" [(ngModel)]="professor.curriculo"></ion-textarea>
+    </ion-item>
+  
+    <br><br><br>
+    <ion-button color="primary" expand="full" (click)="salvar(professor.id)" [disabled]="desabilitaBotao()">Salvar Professor</ion-button>
+  </ion-content>
+  
