@@ -61,6 +61,7 @@ export class LoginPage implements OnInit {
               this.autenticarService.setAutenticado('true');
               this.carregarProfessores();
             } else {
+              this.loading.dismiss();
               this.toastMensagem(this.data.mensagem);
             }
           },
